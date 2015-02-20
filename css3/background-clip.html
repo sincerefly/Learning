@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8" />
+<title>背景裁切</title>
+<style type="text/css">
+.wrap {
+  width: 220px;
+  border: 20px dashed #000;
+  padding: 20px;
+  font-width: bold;
+  color: #000;
+  background: #ccc url(./src/img/128x128px.jpg) no-repeat;
+  background-origin: border-box;
+  background-clip: padding-box;
+  position: relative;
+}
+.wrap span {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.content {
+  height: 80px;
+  border: 1px solid #333;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <span>padding</span>
+  123
+  <div class="content">content</div>
+</div>
+</body>
+</html>
