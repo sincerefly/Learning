@@ -6,6 +6,7 @@
     日期：<%= post.time.minute %>
   </p>
   <p><%- post.post %></p>
+  <p class="info">阅读：<%= post.pv %> | 评论：<%= post.comments.length %></p>
 <% }) %>
 <%- include paging %>
 <%- include footer %>
