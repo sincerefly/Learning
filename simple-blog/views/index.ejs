@@ -1,6 +1,11 @@
 <%- include header %>
 <% posts.forEach(function (post, index) { %>
-  <p><h2><a href="u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>"><%= post.title %></a></h2></p>
+  <p>
+    <h2>
+      <a href="u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>"><%= post.title %></a>
+    </h2>
+    <a href="/u/<%= post.name %>"><img src="<%= post.head %>" class="r_head" /></a>
+  </p>
   作者：<a href="/u/<%= post.name %>"><%= post.name %></a> | 
   <p class="info">
     日期：<%= post.time.minute %> | 

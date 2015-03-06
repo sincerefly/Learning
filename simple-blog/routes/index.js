@@ -141,7 +141,7 @@ router.post('/post', checkLogin);
 router.post('/post', function (req, res) {
   var currentUser = req.session.user,
       tags = [req.body.tag1, req.body.tag2, req.body.tag3],
-      post = new Post(currentUser.name, req.body.title, tags, req.body.post);
+      post = new Post(currentUser.name, currentUser.head, req.body.title, tags, req.body.post);
   post.save(function (err) {
     if (err) {
       req.flash('error', err); 
@@ -297,8 +297,13 @@ router.post('/u/:name/:day/:title', function (req, res) {
   var date = new Date(),
       time = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " + 
              date.getHours() + ":" + (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes());
+
+  var md5 = crypto.createHash('md5'),
+      email_MD5 = md5.update(req.body.email.toLowerCase()).digest('hex'),
+      head = "http://gravatar.duoshuo.com/avatar/" + email_MD5 + "?s=48"; 
   var comment = {
       name: req.body.name,
+      head: head,
       email: req.body.email,
       website: req.body.website,
       time: time,

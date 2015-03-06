@@ -26,3 +26,6 @@ article a:hover{color:#333333;text-decoration:underline;}
 .tag:hover{text-decoration:none;background-color:#ffffff;color:#000000;-webkit-transition:color .2s linear;}
 
 .search{border:0;width:6em;text-align:center;font-size:1em;margin:0.5em 0;}
+
+.l_head{float:left;margin-left:-4em;box-shadow:0px 1px 4px #888;}
+.r_head{float:right;margin-top:-2.5em;box-shadow:0px 1px 4px #888;}
