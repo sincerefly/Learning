@@ -5,8 +5,8 @@ import requests
 
 # https://github.com/yxjxx/v2ex_daily_mission
 
-username = 'sincerefly'   # your v2ex username
-password = 'only31031'    # your v2ex password
+username = 'username'   # your v2ex username
+password = 'password'    # your v2ex password
 login_url = 'https://v2ex.com/signin'
 home_page = 'https://www.v2ex.com'
 mission_url = 'https://www.v2ex.com/mission/daily'
