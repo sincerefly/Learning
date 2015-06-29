@@ -8,6 +8,8 @@ import requests
 # settings 
 username = 'dongdong36'   # your v2ex username
 password = 'only31031'    # your v2ex password
+username = 'sincerefly'   # your v2ex username
+password = 'only31031'    # your v2ex password
 login_url = 'https://v2ex.com/signin'
 home_page = 'https://www.v2ex.com'
 mission_url = 'https://www.v2ex.com/mission/daily'
@@ -22,15 +24,15 @@ headers = {
 }
 
 
-def make_soup(url,tag,name):
+def make_soup(url,tag,name, v2ex_session):
     page = v2ex_session.get(url,headers=headers,verify=True).text
     soup = BeautifulSoup(page)
     soup_result = soup.find(attrs = {tag:name})
     # print soup_result
     return soup_result
 
-def make_post():
-    once_vaule = make_soup(login_url,'name','once')['value']
+def make_post(v2ex_session):
+    once_vaule = make_soup(login_url,'name','once', v2ex_session)['value']
     print(once_vaule)
     
     post_info = {
@@ -43,10 +45,10 @@ def make_post():
 
 def start_run():
     v2ex_session = requests.Session()
-    post_info = make_post()
+    post_info = make_post(v2ex_session)
     resp = v2ex_session.post(login_url,data=post_info,headers=headers,verify=True)
     
-    short_url = make_soup(mission_url, 'class', 'super normal button')['onclick']
+    short_url = make_soup(mission_url, 'class', 'super normal button', v2ex_session)['onclick']
     
     
     first_quote = short_url.find("'")
@@ -55,7 +57,7 @@ def start_run():
     
     page = v2ex_session.get(final_url,headers=headers,verify=True).content
     
-    flag = make_soup(mission_url, 'class', 'fa fa-ok-sign')
+    flag = make_soup(mission_url, 'class', 'fa fa-ok-sign', v2ex_session)
 
     return flag
 
