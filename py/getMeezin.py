@@ -6,6 +6,11 @@ import sys
 import requests
 from bs4 import BeautifulSoup
 
+#####################
+# Use:
+#    ./getMeezin.py 1 1080
+#
+
 def getPicId(num):
 
     # 返回双位的字符串
@@ -25,7 +30,10 @@ def saveMeez(img_list):
         pic_num = getPicId(num)
         pic_postfix = girlLink.split('.')[-1]
         pic_name = str(timestamp)[0:10] + pic_num + '.' + pic_postfix
-        urllib.urlretrieve(girlLink, './meez.in/'+ pic_name)
+        try:
+            urllib.urlretrieve(girlLink, './meez.in/'+ pic_name)
+        except:
+            print "保存失败"
 
         num = num + 1
 
@@ -34,15 +42,22 @@ def saveMeez(img_list):
 
 def getMeez(url):
 
-    r = requests.get(url)
-    content = r.content
+    try:
+        r = requests.get(url)
+        content = r.content
+    except:
+        print "解析文章出错"
+        return
 
     soup = BeautifulSoup(content, "html.parser")
     con = soup.find_all('div', attrs={"class":"main-body"})
 
-    urls = con[0].find_all('img')
-    flag = 0
+    try:
+        urls = con[0].find_all('img')
+    except:
+        return
 
+    flag = 0
     img_list = []
     for u in urls:
         if flag == 0:
@@ -57,13 +72,13 @@ def getMeez(url):
 
 
 def hasArticle(url):
-    r = requests.head(url)
-    status_code = r.status_code
-    print "(%s/%s) %s %s" % (aid, MaxID, url, status_code)
-    if status_code == 200:
-        return True
-    else:
-        return False
+    try:
+        r = requests.head(url)
+        status_code = r.status_code
+    except:
+        status_code == '404'
+
+    return status_code
 
 
 if __name__ == "__main__":
@@ -75,7 +90,10 @@ if __name__ == "__main__":
     # 遍历有效的文章链接
     for aid in range(StartID, MaxID+StartID):
         url = 'http://www.meez.in/a/%s.html' % str(aid)
-        if hasArticle(url):
+        status_code = hasArticle(url)
+        print "(%s/%s) %s %s" % (aid, MaxID, url, status_code)
+
+        if status_code == 200:
             getMeez(url)
         else:
             continue
