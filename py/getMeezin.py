@@ -3,6 +3,7 @@
 import time
 import urllib
 import sys
+import os
 import requests
 from bs4 import BeautifulSoup
 
@@ -87,8 +88,11 @@ if __name__ == "__main__":
     StartID = int(sys.argv[1])
     MaxID = int(sys.argv[2])
 
+    # 存放图片的文件夹
+    os.mkdir('meez.in')
+
     # 遍历有效的文章链接
-    for aid in range(StartID, MaxID+StartID):
+    for aid in range(StartID, MaxID+1):
         url = 'http://www.meez.in/a/%s.html' % str(aid)
         status_code = hasArticle(url)
         print "(%s/%s) %s %s" % (aid, MaxID, url, status_code)
