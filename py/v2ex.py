@@ -4,11 +4,11 @@ import requests
 
 # https://gist.github.com/187j3x1/6349451
 
-username = 'sincerefly' ###账号###
-password = 'only31031' ###密码###
-login_url = 'http://v2ex.com/signin' ###如V2EX设置了使�? SSL,必须�? https###
-index_url = 'http://v2ex.com' ###同上###
-mission_url = 'http://www.v2ex.com/mission/daily' ###同上###
+username = 'username' ###è´¦å·###
+password = 'password' ###å¯†ç ###
+login_url = 'http://v2ex.com/signin' ###å¦‚V2EXè®¾ç½®äº†ä½¿ç”? SSL,å¿…é¡»æ”? https###
+index_url = 'http://v2ex.com' ###åŒä¸Š###
+mission_url = 'http://www.v2ex.com/mission/daily' ###åŒä¸Š###
 UA = "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) \
 Chrome/27.0.1453.116 Safari/537.36"
 headers = {
