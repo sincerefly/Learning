@@ -77,7 +77,7 @@ def hasArticle(url):
         r = requests.head(url)
         status_code = r.status_code
     except:
-        status_code == '404'
+        status_code = '404'
 
     return status_code
 
