@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Learn React!</title>
+	<script type="text/javascript" src="react-0.13.3/build/react.js"></script>
+	<script type="text/javascript" src="react-0.13.3/build/JSXTransformer.js"></script>
+	<script type="text/jsx">
+		var MessageBox = React.createClass({
+			clickme: function () {
+				alert('ni gang cai dian ji le wo yi xia ...');
+			},
+		 	render: function () {
+
+		 		var message = [];
+		 		for(var ii=0; ii<10; ii++) {
+		 			message.push(
+		 				<div key={"meg" + ii}>
+		 					<h4>123</h4>
+							<Submessage/>
+		 				</div>
+		 			)
+		 		}
+
+				return (
+					<div>
+					    <h1 onClick={this.clickme}>hello world!</h1>
+						<Submessage/>
+						{message}
+					</div>
+				)
+			}
+		});
+
+		var Submessage = React.createClass({
+			render: function () {
+				return (
+					<div>
+					    <h2>haha</h2>
+					    <Footer/>
+					</div>
+				)
+			}
+		});
+
+		var Footer = React.createClass({
+			render: function () {
+				return (
+					<div>
+						<h3>2333</h3>
+					</div>
+				);
+			}
+		});
+
+
+		React.render(<MessageBox/>,
+			document.getElementById('box'),
+			function () {
+				console.log('ok!');
+			}
+		);
+	</script>
+</head>
+<body>
+	<div id='box'></div>
+</body>
+</html>
