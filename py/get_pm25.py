@@ -1,6 +1,6 @@
 #!/bin/env python
 # coding=utf-8
-import time 
+import time
 import urllib2
 import re
 import MySQLdb
@@ -37,7 +37,7 @@ for i in city_pinyin_list:
     #st = random.randint(6,16)
     #print "%d秒后获取下一城市" % st
     time.sleep(3)
-    
+
     # 获取网页
     try:
         response = urllib2.urlopen(url)
@@ -45,7 +45,6 @@ for i in city_pinyin_list:
     except urllib2.HTTPError, e:
         print city_list[city_pinyin_list.index(i)] + ' ' + '404 page not found'
 
-        
     smog_match = smog_re.match(html)
     if smog_match:
         smog = smog_match.group(1)
@@ -53,7 +52,7 @@ for i in city_pinyin_list:
         # 写入数据库
         #cmd = 'UPDATE weather SET real_time_pm25=%s WHERE date="%s" AND city="%s"' % (smog, date, city_list[city_pinyin_list.index(i)])
         #print cmd
-        #conn = MySQLdb.connect(host='localhost', port=3306, db='w_smog', user='work', passwd='BJHR123')
+        #conn = MySQLdb.connect(host='localhost', port=3306, db='w_smog', user='user', passwd='123456')
         #cursor = conn.cursor()
         #cursor.execute(cmd)
         #conn.commit()
@@ -61,10 +60,10 @@ for i in city_pinyin_list:
         #conn.close()
     else:
         print "Some error"
-        # Some err 
+        # Some err
         #cmd = 'UPDATE weather SET real_time_pm25=%s WHERE date="%s" AND city="%s"' % (0, date, city_list[city_pinyin_list.index(i)])
         #print cmd
-        #conn = MySQLdb.connect(host='localhost', port=3306, db='w_smog', user='work', passwd='BJHR123')
+        #conn = MySQLdb.connect(host='localhost', port=3306, db='w_smog', user='user', passwd='123456')
         #cursor = conn.cursor()
         #cursor.execute(cmd)
         #conn.commit()
