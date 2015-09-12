@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Learn React!</title>
+	<script type="text/javascript" src="react-0.13.3/build/react.js"></script>
+	<script type="text/javascript" src="react-0.13.3/build/JSXTransformer.js"></script>
+	<script type="text/jsx">
+		var MessageBox = React.createClass({
+			getInitialState: function () {
+				return {
+					isVisible: true,
+					titleMessage: 'hello world!',
+				}
+				// body...
+			},
+		 	render: function () {
+		 		var styleObj = {
+		 			styleplay: this.state.isVisible ? 'block' : 'none'
+				}
+
+		 		return (
+		 			<div>
+			 			<h1 style={styleObj}>{this.state.titleMessage}</h1>
+		 			</div>
+		 		)
+
+			}
+		});
+
+		var messageBox = React.render(<MessageBox/>,
+			document.getElementById('box'),
+			function () {
+				console.log('ok!');
+			}
+		);
+	</script>
+</head>
+<body>
+	<div id='box'></div>
+</body>
+</html>
