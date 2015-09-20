@@ -713,22 +713,3 @@ msgstr "总是应用这个设定"
 msgid "Overwrite?"
 msgstr "覆盖?"
 
-#~ msgid "Add folders"
-#~ msgstr "Hinzufügen von Ordnern"
-
-#~ msgid "Alert when overwriting existing files"
-#~ msgstr "Warnen wenn vorhandene Dateien überschrieben werden"
-
-#~ msgid ""
-#~ "Can't save image %s: input file has no extension.\n"
-#~ "You can solve this error by adding a \"Change format or compression\" step"
-#~ msgstr ""
-#~ "image %s kann nicht gespeichert werden: Eingabedatei hat keine Endung.\n"
-#~ "Sie können diesen Fehler durch hinzufügen einer \"Format oder Kompression "
-#~ "ändern\" Aufgabe beheben."
-
-#~ msgid "Working on file %s..."
-#~ msgstr "File %s in Bearbeitung..."
-
-#~ msgid "Yes, don't ask again"
-#~ msgstr "Ja, nicht wieder nachfragen"
