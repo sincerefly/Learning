@@ -1,14 +1,15 @@
+#!/bin/env python
 # -*- coding: utf-8 -*-
 from bs4 import BeautifulSoup
 import requests
 
 # https://gist.github.com/187j3x1/6349451
 
-username = 'username' ###è´¦å·###
-password = 'password' ###å¯†ç ###
-login_url = 'http://v2ex.com/signin' ###å¦‚V2EXè®¾ç½®äº†ä½¿ç”? SSL,å¿…é¡»æ”? https###
-index_url = 'http://v2ex.com' ###åŒä¸Š###
-mission_url = 'http://www.v2ex.com/mission/daily' ###åŒä¸Š###
+username = 'username'
+password = 'password'
+login_url = 'http://v2ex.com/signin'
+index_url = 'http://v2ex.com'
+mission_url = 'http://www.v2ex.com/mission/daily'
 UA = "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) \
 Chrome/27.0.1453.116 Safari/537.36"
 headers = {
