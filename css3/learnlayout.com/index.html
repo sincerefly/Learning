@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Learn layout</title>
+	<style type="text/css">
+		* {
+		  -webkit-box-sizing: border-box;
+		     -moz-box-sizing: border-box;
+		          box-sizing: border-box;
+		}
+		#main {
+			max-width: 600px;
+			height: 200px;
+			margin: 0 auto;
+			background-color: #ccc;
+		}
+		.relative1 {
+			position: relative;
+			border: 1px solid #ccc;
+			width: 100px;
+			height: 60px;
+		}
+		.relative2 {
+			position: relative;
+			border: 1px solid #ccc;
+			top: -20px;
+			left: 20px;
+			background-color: white;
+			width: 100px;
+			height: 60px;
+		}
+		.fixed {
+			position: fixed;
+			border: 1px solid #ccc;
+			bottom: 0;
+			right: 0;
+			width: 200px;
+			background-color: white;
+		}
+		.relative {
+			position: relative;
+			width: 600px;
+			height: 400px;
+			border: 1px solid #ccc;
+		}
+		.absolute {
+			position: absolute;
+			top: 120px;
+			right: 0px;
+			width: 300px;
+			height: 200px;
+			border: 1px solid #ccc;
+		}
+	</style>
+</head>
+<body>
+<div id="main">
+</div>
+<hr />
+<div class="relative1">
+</div>
+<div class="relative2">
+111111111111111111
+</div>
+<div class="relative1">
+</div>
+<div class="fixed">
+2333, hello I am fixed!
+2333, hello I am fixed!
+2333, hello I am fixed!
+</div>
+<hr />
+<div class="relative">
+	This is relative
+	<div class="absolute">This is absolute</div>
+</div>
+</body>
+</html>
