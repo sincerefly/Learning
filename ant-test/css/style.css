@@ -1,0 +1,29 @@
+header {
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  font-size: 16px;
+}
+
+/* 清除浮动 */
+.clearfix:before,.clearfix:after{
+  content:"";
+  display:table;
+}
+.clearfix:after{clear:both;}
+.clearfix{
+  *zoom:1;  /*IE/7/6*/
+}
+
+.logo img {
+  float: left;
+  margin-top: -7px;
+}
+
+a.logo {
+  float: left;
+  height: 46px;
+  line-height: 46px;
+  margin: 17px 48px 17px 40px;
+  font-size: 18px;
+}
