@@ -1,13 +1,14 @@
 <html>
 <head>
-<meta charset="utf-8">
-<!-- 引入样式 -->
-<link rel="stylesheet" href="/css/antd.css">
-<link rel="stylesheet" href="/css/style.css">
-<script type="text/javascript" charset="utf-8" src="/js/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" charset="utf-8" src="/js/react.min.js"></script>
-<script type="text/javascript" charset="utf-8" src="/js/JSXTransformer.js"></script>
-<script type="text/javascript" charset="utf-8" src="/js/antd.js"></script>
+  <meta charset="utf-8">
+  <!-- 引入样式 -->
+  <link rel="stylesheet" href="/css/antd.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="text/javascript" charset="utf-8" src="/js/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/js/react.min.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/js/JSXTransformer.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/js/antd.js"></script>
+  <script type="text/jsx" charset="utf-8" src="/js/aside.js"></script>
 </head>
 <body>
   <header id="header" class="clearfix">
@@ -16,13 +17,22 @@
       EasyHexo
     </a>
   </header>
-  <div class="main-wrapper"></div>
+  <div class="main-wrapper">
+    <aside class="aside-container">
+      <div id="sider">
+      </div>
+    </aside>
+    <section class="main-container">
+      <div id="components-menu-demo-sider">
+      </div>
+    </section>
+  </div>
   <footer class="footer"></footer>
   <div id="components-datepicker-demo-basic"></div>
+  <div id="sider"></div>
+  <div id="test"></div>
 </body>
-<!--
 <script type="text/jsx" charset="utf-8">
-  React.render(<antd.Datepicker />, document.getElementById('components-datepicker-demo-basic'));
+
 </script>
--->
 </html>

@@ -27,3 +27,43 @@ a.logo {
   margin: 17px 48px 17px 40px;
   font-size: 18px;
 }
+
+.main-wrapper {
+  background-color: #000;
+}
+
+.aside-container {
+  width: 260px;
+  background-color: #F9F9F9;
+  padding-top: 10px;
+  padding-bottom: 50px;
+  float: left;
+}
+
+.aside-container li a {
+  line-height: 40px;
+  height: 40px;
+  color: #5C6B76;
+}
+
+.aside-container > ul > li > a {
+  padding-left: 46px;
+  font-size: 14px;
+}
+
+ul, li {
+  list-style: none;
+}
+
+a {
+  color: 
+}
+
+
+
+
+
+
+
+
+
