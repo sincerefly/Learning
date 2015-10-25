@@ -1,0 +1,156 @@
+var Router = ReactRouter; // 由于是html直接引用的库，所以 ReactRouter 是以全局变量的形式挂在 window 上
+var Route = ReactRouter.Route;
+var RouteHandler = ReactRouter.RouteHandler;
+var Link = ReactRouter.Link;
+var StateMixin = ReactRouter.State;
+var Menu = antd.Menu;
+var SubMenu = Menu.SubMenu;
+
+var Header = React.createClass({
+  render() {
+    return
+        <header id="header" class="clearfix">
+          <a class="logo" href="http://www.baidu.com">
+            <img width="60px" src="https://t.alipayobjects.com/images/rmsweb/>
+            EasyHexo
+          </a>
+         </header>
+  }
+});
+
+var Sider = React.createClass({
+  getInitialState() {
+    return {
+      current: '1'
+    }
+  },
+  handleClick(e) {
+    console.log('click ', e);
+    this.setState({
+      current: e.key
+    });
+  },
+  render() {
+    return <Menu onClick={this.handleClick}
+                 style={{width:260}}
+                 defaultOpenKeys={['sub1']}
+                 selectedKeys={[this.state.current]}
+                 mode="inline">
+      <SubMenu key="sub1" title={<span><i className="anticon anticon-mail"></i><span>文章管理</span></span>}>
+        <Menu.Item key="1">
+          <a href="/new" >新建文章</a>
+        </Menu.Item>
+        <Menu.Item key="2">文章列表</Menu.Item>
+      </SubMenu>
+      <SubMenu key="sub2" title={<span><i className="anticon anticon-appstore"></i><span>博客设置</span></span>}>
+        <Menu.Item key="5">Hexo设置</Menu.Item>
+        <Menu.Item key="6">主题设置</Menu.Item>
+      </SubMenu>
+      <SubMenu key="sub3" title={<span><i className="anticon anticon-setting"></i><span>关于</span></span>}>
+        <Menu.Item key="9">选项9</Menu.Item>
+        <Menu.Item key="10">选项10</Menu.Item>
+        <Menu.Item key="11">选项11</Menu.Item>
+        <Menu.Item key="12">选项12</Menu.Item>
+      </SubMenu>
+    </Menu>;
+  }
+});
+
+//React.render(<Sider />, document.getElementById('sider'));
+
+
+/**
+ * 图书列表组件
+ */
+var Books = React.createClass({
+  render: function() {
+    return (
+      <ul>
+        <li key={1}><Link to="book" params={{id: 1}}>活着</Link></li>
+        <li key={2}><Link to="book" params={{id: 2}}>挪威的森林</Link></li>
+        <li key={3}><Link to="book" params={{id: 3}}>从你的全世界走过</Link></li>
+        <RouteHandler />
+      </ul>
+    );
+  }
+});
+
+/**
+ * 单本图书组件
+ */
+var Book = React.createClass({
+  mixins: [StateMixin],
+
+  render: function() {
+    return (
+      <article>
+       <h1>这里是图书 id 为 {this.getParams()['id']} 的详情介绍</h1>
+      </article>
+    );
+  }
+});
+
+/**
+ * 电影列表组件
+ */
+var Movies = React.createClass({
+  render: function() {
+    return (
+      <ul>
+        <li key={1}><Link to="movie" params={{id: 1}}>煎饼侠</Link></li>
+        <li key={2}><Link to="movie" params={{id: 2}}>捉妖记</Link></li>
+        <li key={3}><Link to="movie" params={{id: 3}}>西游记之大圣归来</Link></li>
+      </ul>
+    );
+  }
+});
+
+/**
+ * 单部电影组件
+ */
+var Movie = React.createClass({
+  mixins: [StateMixin],
+  
+  render: function() {
+    return (
+      <article>
+       <h1>这里是电影 id 为 {this.getParams().id} 的详情介绍</h1>
+      </article>
+    );
+  }
+});
+
+// 应用入口
+var App = React.createClass({
+  render: function() {
+    return (
+      <div className="app">
+       <nav>
+         <a href="#"><Link to="movies">电影</Link></a>
+         <a href="#"><Link to="books">图书</Link></a>
+        </nav>
+        <Header />
+        <Sider />
+        <section>
+          <RouteHandler />
+        </section>
+      </div>
+    );
+  }
+});
+
+// 定义页面上的路由
+var routes = (
+  <Route handler={App}>
+    <Route name="movies" handler={Movies} />
+    <Route name="movie" path="/movie/:id" handler={Movie} />
+    <Route name="books" handler={Books} />
+    <Route name="book" path="/book/:id" handler={Book} />
+  </Route>
+);
+
+// 将匹配的路由渲染到 DOM 中
+Router.run(routes, Router.HashLocation, function(Root){
+  React.render(<Root />, document.body);
+});
+

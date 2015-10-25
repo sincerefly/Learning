@@ -193,8 +193,8 @@ body {
   font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", "STHeitiSC-Light", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
   font-size: 12px;
   line-height: 1.5;
-  color: #666666;
-  background-color: #ffffff;
+  color: #666;
+  background-color: #fff;
 }
 body,
 div,
@@ -1377,14 +1377,11 @@ samp {
 }
 .fade-enter,
 .fade-appear {
-  opacity: 0;
   -webkit-animation-duration: .3s;
           animation-duration: .3s;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
   display: block !important;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
   -webkit-animation-play-state: paused;
           animation-play-state: paused;
 }
@@ -1394,25 +1391,75 @@ samp {
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
   display: block !important;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
   -webkit-animation-play-state: paused;
           animation-play-state: paused;
 }
 .fade-enter.fade-enter-active,
 .fade-appear.fade-appear-active {
-  -webkit-animation-name: fadeIn;
-          animation-name: fadeIn;
+  -webkit-animation-name: antFadeIn;
+          animation-name: antFadeIn;
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
 .fade-leave.fade-leave-active {
-  -webkit-animation-name: fadeOut;
-          animation-name: fadeOut;
+  -webkit-animation-name: antFadeOut;
+          animation-name: antFadeOut;
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
-@-webkit-keyframes fadeIn {
+.fade-enter,
+.fade-appear {
+  opacity: 0;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+.fade-leave {
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+.ant-modal-fade-enter,
+.ant-modal-fade-appear {
+  -webkit-animation-duration: .3s;
+          animation-duration: .3s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  display: block !important;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+.ant-modal-fade-leave {
+  -webkit-animation-duration: .3s;
+          animation-duration: .3s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  display: block !important;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+.ant-modal-fade-enter.ant-modal-fade-enter-active,
+.ant-modal-fade-appear.ant-modal-fade-appear-active {
+  -webkit-animation-name: antFadeIn;
+          animation-name: antFadeIn;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+.ant-modal-fade-leave.ant-modal-fade-leave-active {
+  -webkit-animation-name: antFadeOut;
+          animation-name: antFadeOut;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+.ant-modal-fade-enter,
+.ant-modal-fade-appear {
+  opacity: 0;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+.ant-modal-fade-leave {
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+@-webkit-keyframes antFadeIn {
   0% {
     opacity: 0;
   }
@@ -1420,7 +1467,7 @@ samp {
     opacity: 1;
   }
 }
-@keyframes fadeIn {
+@keyframes antFadeIn {
   0% {
     opacity: 0;
   }
@@ -1428,7 +1475,7 @@ samp {
     opacity: 1;
   }
 }
-@-webkit-keyframes fadeOut {
+@-webkit-keyframes antFadeOut {
   0% {
     opacity: 1;
   }
@@ -1436,7 +1483,7 @@ samp {
     opacity: 0;
   }
 }
-@keyframes fadeOut {
+@keyframes antFadeOut {
   0% {
     opacity: 1;
   }
@@ -1465,14 +1512,14 @@ samp {
 }
 .move-up-enter.move-up-enter-active,
 .move-up-appear.move-up-appear-active {
-  -webkit-animation-name: moveUpIn;
-          animation-name: moveUpIn;
+  -webkit-animation-name: antMoveUpIn;
+          animation-name: antMoveUpIn;
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
 .move-up-leave.move-up-leave-active {
-  -webkit-animation-name: moveUpOut;
-          animation-name: moveUpOut;
+  -webkit-animation-name: antMoveUpOut;
+          animation-name: antMoveUpOut;
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
@@ -1507,14 +1554,14 @@ samp {
 }
 .move-down-enter.move-down-enter-active,
 .move-down-appear.move-down-appear-active {
-  -webkit-animation-name: moveDownIn;
-          animation-name: moveDownIn;
+  -webkit-animation-name: antMoveDownIn;
+          animation-name: antMoveDownIn;
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
 .move-down-leave.move-down-leave-active {
-  -webkit-animation-name: moveDownOut;
-          animation-name: moveDownOut;
+  -webkit-animation-name: antMoveDownOut;
+          animation-name: antMoveDownOut;
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
@@ -1549,14 +1596,14 @@ samp {
 }
 .move-left-enter.move-left-enter-active,
 .move-left-appear.move-left-appear-active {
-  -webkit-animation-name: moveLeftIn;
-          animation-name: moveLeftIn;
+  -webkit-animation-name: antMoveLeftIn;
+          animation-name: antMoveLeftIn;
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
 .move-left-leave.move-left-leave-active {
-  -webkit-animation-name: moveLeftOut;
-          animation-name: moveLeftOut;
+  -webkit-animation-name: antMoveLeftOut;
+          animation-name: antMoveLeftOut;
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
@@ -1591,14 +1638,14 @@ samp {
 }
 .move-right-enter.move-right-enter-active,
 .move-right-appear.move-right-appear-active {
-  -webkit-animation-name: moveRightIn;
-          animation-name: moveRightIn;
+  -webkit-animation-name: antMoveRightIn;
+          animation-name: antMoveRightIn;
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
 .move-right-leave.move-right-leave-active {
-  -webkit-animation-name: moveRightOut;
-          animation-name: moveRightOut;
+  -webkit-animation-name: antMoveRightOut;
+          animation-name: antMoveRightOut;
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
@@ -1612,7 +1659,7 @@ samp {
   -webkit-animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.34);
           animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.34);
 }
-@-webkit-keyframes moveDownIn {
+@-webkit-keyframes antMoveDownIn {
   0% {
     -webkit-transform-origin: 0 0;
             transform-origin: 0 0;
@@ -1628,7 +1675,7 @@ samp {
     opacity: 1;
   }
 }
-@keyframes moveDownIn {
+@keyframes antMoveDownIn {
   0% {
     -webkit-transform-origin: 0 0;
             transform-origin: 0 0;
@@ -1644,7 +1691,7 @@ samp {
     opacity: 1;
   }
 }
-@-webkit-keyframes moveDownOut {
+@-webkit-keyframes antMoveDownOut {
   0% {
     -webkit-transform-origin: 0 0;
             transform-origin: 0 0;
@@ -1660,7 +1707,7 @@ samp {
     opacity: 0;
   }
 }
-@keyframes moveDownOut {
+@keyframes antMoveDownOut {
   0% {
     -webkit-transform-origin: 0 0;
             transform-origin: 0 0;
@@ -1676,7 +1723,7 @@ samp {
     opacity: 0;
   }
 }
-@-webkit-keyframes moveLeftIn {
+@-webkit-keyframes antMoveLeftIn {
   0% {
     -webkit-transform-origin: 0 0;
             transform-origin: 0 0;
@@ -1692,7 +1739,7 @@ samp {
     opacity: 1;
   }
 }
-@keyframes moveLeftIn {
+@keyframes antMoveLeftIn {
   0% {
     -webkit-transform-origin: 0 0;
             transform-origin: 0 0;
@@ -1708,7 +1755,7 @@ samp {
     opacity: 1;
   }
 }
-@-webkit-keyframes moveLeftOut {
+@-webkit-keyframes antMoveLeftOut {
   0% {
     -webkit-transform-origin: 0 0;
             transform-origin: 0 0;
@@ -1724,7 +1771,7 @@ samp {
     opacity: 0;
   }
 }
-@keyframes moveLeftOut {
+@keyframes antMoveLeftOut {
   0% {
     -webkit-transform-origin: 0 0;
             transform-origin: 0 0;
@@ -1740,7 +1787,7 @@ samp {
     opacity: 0;
   }
 }
-@-webkit-keyframes moveRightIn {
+@-webkit-keyframes antMoveRightIn {
   0% {
     opacity: 0;
     -webkit-transform-origin: 0 0;
@@ -1756,7 +1803,7 @@ samp {
             transform: translateX(0%);
   }
 }
-@keyframes moveRightIn {
+@keyframes antMoveRightIn {
   0% {
     opacity: 0;
     -webkit-transform-origin: 0 0;
@@ -1772,7 +1819,7 @@ samp {
             transform: translateX(0%);
   }
 }
-@-webkit-keyframes moveRightOut {
+@-webkit-keyframes antMoveRightOut {
   0% {
     -webkit-transform-origin: 0 0;
             transform-origin: 0 0;
@@ -1788,7 +1835,7 @@ samp {
     opacity: 0;
   }
 }
-@keyframes moveRightOut {
+@keyframes antMoveRightOut {
   0% {
     -webkit-transform-origin: 0 0;
             transform-origin: 0 0;
@@ -1804,7 +1851,7 @@ samp {
     opacity: 0;
   }
 }
-@-webkit-keyframes moveUpIn {
+@-webkit-keyframes antMoveUpIn {
   0% {
     -webkit-transform-origin: 0 0;
             transform-origin: 0 0;
@@ -1820,7 +1867,7 @@ samp {
     opacity: 1;
   }
 }
-@keyframes moveUpIn {
+@keyframes antMoveUpIn {
   0% {
     -webkit-transform-origin: 0 0;
             transform-origin: 0 0;
@@ -1836,7 +1883,7 @@ samp {
     opacity: 1;
   }
 }
-@-webkit-keyframes moveUpOut {
+@-webkit-keyframes antMoveUpOut {
   0% {
     -webkit-transform-origin: 0 0;
             transform-origin: 0 0;
@@ -1852,7 +1899,7 @@ samp {
     opacity: 0;
   }
 }
-@keyframes moveUpOut {
+@keyframes antMoveUpOut {
   0% {
     -webkit-transform-origin: 0 0;
             transform-origin: 0 0;
@@ -1917,14 +1964,14 @@ samp {
 }
 .slide-up-enter.slide-up-enter-active,
 .slide-up-appear.slide-up-appear-active {
-  -webkit-animation-name: slideUpIn;
-          animation-name: slideUpIn;
+  -webkit-animation-name: antSlideUpIn;
+          animation-name: antSlideUpIn;
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
 .slide-up-leave.slide-up-leave-active {
-  -webkit-animation-name: slideUpOut;
-          animation-name: slideUpOut;
+  -webkit-animation-name: antSlideUpOut;
+          animation-name: antSlideUpOut;
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
@@ -1959,14 +2006,14 @@ samp {
 }
 .slide-down-enter.slide-down-enter-active,
 .slide-down-appear.slide-down-appear-active {
-  -webkit-animation-name: slideDownIn;
-          animation-name: slideDownIn;
+  -webkit-animation-name: antSlideDownIn;
+          animation-name: antSlideDownIn;
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
 .slide-down-leave.slide-down-leave-active {
-  -webkit-animation-name: slideDownOut;
-          animation-name: slideDownOut;
+  -webkit-animation-name: antSlideDownOut;
+          animation-name: antSlideDownOut;
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
@@ -2001,14 +2048,14 @@ samp {
 }
 .slide-left-enter.slide-left-enter-active,
 .slide-left-appear.slide-left-appear-active {
-  -webkit-animation-name: slideLeftIn;
-          animation-name: slideLeftIn;
+  -webkit-animation-name: antSlideLeftIn;
+          animation-name: antSlideLeftIn;
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
 .slide-left-leave.slide-left-leave-active {
-  -webkit-animation-name: slideLeftOut;
-          animation-name: slideLeftOut;
+  -webkit-animation-name: antSlideLeftOut;
+          animation-name: antSlideLeftOut;
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
@@ -2043,14 +2090,14 @@ samp {
 }
 .slide-right-enter.slide-right-enter-active,
 .slide-right-appear.slide-right-appear-active {
-  -webkit-animation-name: slideRightIn;
-          animation-name: slideRightIn;
+  -webkit-animation-name: antSlideRightIn;
+          animation-name: antSlideRightIn;
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
 .slide-right-leave.slide-right-leave-active {
-  -webkit-animation-name: slideRightOut;
-          animation-name: slideRightOut;
+  -webkit-animation-name: antSlideRightOut;
+          animation-name: antSlideRightOut;
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
@@ -2064,7 +2111,7 @@ samp {
   -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
           animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
 }
-@-webkit-keyframes slideUpIn {
+@-webkit-keyframes antSlideUpIn {
   0% {
     opacity: 0;
     -webkit-transform-origin: 0% 0%;
@@ -2080,7 +2127,7 @@ samp {
             transform: scaleY(1);
   }
 }
-@keyframes slideUpIn {
+@keyframes antSlideUpIn {
   0% {
     opacity: 0;
     -webkit-transform-origin: 0% 0%;
@@ -2096,7 +2143,7 @@ samp {
             transform: scaleY(1);
   }
 }
-@-webkit-keyframes slideUpOut {
+@-webkit-keyframes antSlideUpOut {
   0% {
     opacity: 1;
     -webkit-transform-origin: 0% 0%;
@@ -2112,7 +2159,7 @@ samp {
             transform: scaleY(0.8);
   }
 }
-@keyframes slideUpOut {
+@keyframes antSlideUpOut {
   0% {
     opacity: 1;
     -webkit-transform-origin: 0% 0%;
@@ -2128,7 +2175,7 @@ samp {
             transform: scaleY(0.8);
   }
 }
-@-webkit-keyframes slideDownIn {
+@-webkit-keyframes antSlideDownIn {
   0% {
     opacity: 0;
     -webkit-transform-origin: 100% 100%;
@@ -2144,7 +2191,7 @@ samp {
             transform: scaleY(1);
   }
 }
-@keyframes slideDownIn {
+@keyframes antSlideDownIn {
   0% {
     opacity: 0;
     -webkit-transform-origin: 100% 100%;
@@ -2160,7 +2207,7 @@ samp {
             transform: scaleY(1);
   }
 }
-@-webkit-keyframes slideDownOut {
+@-webkit-keyframes antSlideDownOut {
   0% {
     opacity: 1;
     -webkit-transform-origin: 100% 100%;
@@ -2176,7 +2223,7 @@ samp {
             transform: scaleY(0.8);
   }
 }
-@keyframes slideDownOut {
+@keyframes antSlideDownOut {
   0% {
     opacity: 1;
     -webkit-transform-origin: 100% 100%;
@@ -2192,7 +2239,7 @@ samp {
             transform: scaleY(0.8);
   }
 }
-@-webkit-keyframes slideLeftIn {
+@-webkit-keyframes antSlideLeftIn {
   0% {
     opacity: 0;
     -webkit-transform-origin: 0% 0%;
@@ -2208,7 +2255,7 @@ samp {
             transform: scaleX(1);
   }
 }
-@keyframes slideLeftIn {
+@keyframes antSlideLeftIn {
   0% {
     opacity: 0;
     -webkit-transform-origin: 0% 0%;
@@ -2224,7 +2271,7 @@ samp {
             transform: scaleX(1);
   }
 }
-@-webkit-keyframes slideLeftOut {
+@-webkit-keyframes antSlideLeftOut {
   0% {
     opacity: 1;
     -webkit-transform-origin: 0% 0%;
@@ -2240,7 +2287,7 @@ samp {
             transform: scaleX(0.8);
   }
 }
-@keyframes slideLeftOut {
+@keyframes antSlideLeftOut {
   0% {
     opacity: 1;
     -webkit-transform-origin: 0% 0%;
@@ -2256,7 +2303,7 @@ samp {
             transform: scaleX(0.8);
   }
 }
-@-webkit-keyframes slideRightIn {
+@-webkit-keyframes antSlideRightIn {
   0% {
     opacity: 0;
     -webkit-transform-origin: 100% 0%;
@@ -2272,7 +2319,7 @@ samp {
             transform: scaleX(1);
   }
 }
-@keyframes slideRightIn {
+@keyframes antSlideRightIn {
   0% {
     opacity: 0;
     -webkit-transform-origin: 100% 0%;
@@ -2288,7 +2335,7 @@ samp {
             transform: scaleX(1);
   }
 }
-@-webkit-keyframes slideRightOut {
+@-webkit-keyframes antSlideRightOut {
   0% {
     opacity: 1;
     -webkit-transform-origin: 100% 0%;
@@ -2304,7 +2351,7 @@ samp {
             transform: scaleX(0.8);
   }
 }
-@keyframes slideRightOut {
+@keyframes antSlideRightOut {
   0% {
     opacity: 1;
     -webkit-transform-origin: 100% 0%;
@@ -2332,12 +2379,12 @@ samp {
 }
 .swing-enter.swing-enter-active,
 .swing-appear.swing-appear-active {
-  -webkit-animation-name: swingIn;
-          animation-name: swingIn;
+  -webkit-animation-name: antSwingIn;
+          animation-name: antSwingIn;
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
-@-webkit-keyframes swingIn {
+@-webkit-keyframes antSwingIn {
   0%,
   100% {
     -webkit-transform: translateX(0px);
@@ -2360,7 +2407,7 @@ samp {
             transform: translateX(5px);
   }
 }
-@keyframes swingIn {
+@keyframes antSwingIn {
   0%,
   100% {
     -webkit-transform: translateX(0px);
@@ -2404,14 +2451,14 @@ samp {
 }
 .zoom-enter.zoom-enter-active,
 .zoom-appear.zoom-appear-active {
-  -webkit-animation-name: zoomIn;
-          animation-name: zoomIn;
+  -webkit-animation-name: antZoomIn;
+          animation-name: antZoomIn;
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
 .zoom-leave.zoom-leave-active {
-  -webkit-animation-name: zoomOut;
-          animation-name: zoomOut;
+  -webkit-animation-name: antZoomOut;
+          animation-name: antZoomOut;
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
@@ -2448,14 +2495,14 @@ samp {
 }
 .zoom-big-enter.zoom-big-enter-active,
 .zoom-big-appear.zoom-big-appear-active {
-  -webkit-animation-name: zoomBigIn;
-          animation-name: zoomBigIn;
+  -webkit-animation-name: antZoomBigIn;
+          animation-name: antZoomBigIn;
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
 .zoom-big-leave.zoom-big-leave-active {
-  -webkit-animation-name: zoomBigOut;
-          animation-name: zoomBigOut;
+  -webkit-animation-name: antZoomBigOut;
+          animation-name: antZoomBigOut;
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
@@ -2492,14 +2539,14 @@ samp {
 }
 .zoom-up-enter.zoom-up-enter-active,
 .zoom-up-appear.zoom-up-appear-active {
-  -webkit-animation-name: zoomUpIn;
-          animation-name: zoomUpIn;
+  -webkit-animation-name: antZoomUpIn;
+          animation-name: antZoomUpIn;
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
 .zoom-up-leave.zoom-up-leave-active {
-  -webkit-animation-name: zoomUpOut;
-          animation-name: zoomUpOut;
+  -webkit-animation-name: antZoomUpOut;
+          animation-name: antZoomUpOut;
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
@@ -2536,14 +2583,14 @@ samp {
 }
 .zoom-down-enter.zoom-down-enter-active,
 .zoom-down-appear.zoom-down-appear-active {
-  -webkit-animation-name: zoomDownIn;
-          animation-name: zoomDownIn;
+  -webkit-animation-name: antZoomDownIn;
+          animation-name: antZoomDownIn;
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
 .zoom-down-leave.zoom-down-leave-active {
-  -webkit-animation-name: zoomDownOut;
-          animation-name: zoomDownOut;
+  -webkit-animation-name: antZoomDownOut;
+          animation-name: antZoomDownOut;
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
@@ -2580,14 +2627,14 @@ samp {
 }
 .zoom-left-enter.zoom-left-enter-active,
 .zoom-left-appear.zoom-left-appear-active {
-  -webkit-animation-name: zoomLeftIn;
-          animation-name: zoomLeftIn;
+  -webkit-animation-name: antZoomLeftIn;
+          animation-name: antZoomLeftIn;
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
 .zoom-left-leave.zoom-left-leave-active {
-  -webkit-animation-name: zoomLeftOut;
-          animation-name: zoomLeftOut;
+  -webkit-animation-name: antZoomLeftOut;
+          animation-name: antZoomLeftOut;
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
@@ -2624,14 +2671,14 @@ samp {
 }
 .zoom-right-enter.zoom-right-enter-active,
 .zoom-right-appear.zoom-right-appear-active {
-  -webkit-animation-name: zoomRightIn;
-          animation-name: zoomRightIn;
+  -webkit-animation-name: antZoomRightIn;
+          animation-name: antZoomRightIn;
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
 .zoom-right-leave.zoom-right-leave-active {
-  -webkit-animation-name: zoomRightOut;
-          animation-name: zoomRightOut;
+  -webkit-animation-name: antZoomRightOut;
+          animation-name: antZoomRightOut;
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
@@ -2647,7 +2694,11 @@ samp {
   -webkit-animation-timing-function: cubic-bezier(0.78, 0.14, 0.15, 0.86);
           animation-timing-function: cubic-bezier(0.78, 0.14, 0.15, 0.86);
 }
-@-webkit-keyframes zoomIn {
+.zoom-tag-leave {
+  -webkit-animation: antZoomOut 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+          animation: antZoomOut 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+}
+@-webkit-keyframes antZoomIn {
   0% {
     opacity: 0;
     -webkit-transform: scale(0);
@@ -2658,7 +2709,7 @@ samp {
             transform: scale(1);
   }
 }
-@keyframes zoomIn {
+@keyframes antZoomIn {
   0% {
     opacity: 0;
     -webkit-transform: scale(0);
@@ -2669,7 +2720,7 @@ samp {
             transform: scale(1);
   }
 }
-@-webkit-keyframes zoomOut {
+@-webkit-keyframes antZoomOut {
   0% {
     -webkit-transform: scale(1);
             transform: scale(1);
@@ -2680,7 +2731,7 @@ samp {
             transform: scale(0);
   }
 }
-@keyframes zoomOut {
+@keyframes antZoomOut {
   0% {
     -webkit-transform: scale(1);
             transform: scale(1);
@@ -2691,7 +2742,7 @@ samp {
             transform: scale(0);
   }
 }
-@-webkit-keyframes zoomBigIn {
+@-webkit-keyframes antZoomBigIn {
   0% {
     opacity: 0;
     -webkit-transform: scale(0.8);
@@ -2702,7 +2753,7 @@ samp {
             transform: scale(1);
   }
 }
-@keyframes zoomBigIn {
+@keyframes antZoomBigIn {
   0% {
     opacity: 0;
     -webkit-transform: scale(0.8);
@@ -2713,7 +2764,7 @@ samp {
             transform: scale(1);
   }
 }
-@-webkit-keyframes zoomBigOut {
+@-webkit-keyframes antZoomBigOut {
   0% {
     -webkit-transform: scale(1);
             transform: scale(1);
@@ -2724,7 +2775,7 @@ samp {
             transform: scale(0.8);
   }
 }
-@keyframes zoomBigOut {
+@keyframes antZoomBigOut {
   0% {
     -webkit-transform: scale(1);
             transform: scale(1);
@@ -2735,22 +2786,7 @@ samp {
             transform: scale(0.8);
   }
 }
-@-webkit-keyframes zoomUpIn {
-  0% {
-    opacity: 0;
-    -webkit-transform-origin: 50% 0%;
-            transform-origin: 50% 0%;
-    -webkit-transform: scale(0.8);
-            transform: scale(0.8);
-  }
-  100% {
-    -webkit-transform-origin: 50% 0%;
-            transform-origin: 50% 0%;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-@keyframes zoomUpIn {
+@-webkit-keyframes antZoomUpIn {
   0% {
     opacity: 0;
     -webkit-transform-origin: 50% 0%;
@@ -2765,7 +2801,22 @@ samp {
             transform: scale(1);
   }
 }
-@-webkit-keyframes zoomUpOut {
+@keyframes antZoomUpIn {
+  0% {
+    opacity: 0;
+    -webkit-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  100% {
+    -webkit-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@-webkit-keyframes antZoomUpOut {
   0% {
     -webkit-transform-origin: 50% 0%;
             transform-origin: 50% 0%;
@@ -2780,7 +2831,7 @@ samp {
             transform: scale(0.8);
   }
 }
-@keyframes zoomUpOut {
+@keyframes antZoomUpOut {
   0% {
     -webkit-transform-origin: 50% 0%;
             transform-origin: 50% 0%;
@@ -2795,7 +2846,7 @@ samp {
             transform: scale(0.8);
   }
 }
-@-webkit-keyframes zoomLeftIn {
+@-webkit-keyframes antZoomLeftIn {
   0% {
     opacity: 0;
     -webkit-transform-origin: 0% 50%;
@@ -2810,7 +2861,7 @@ samp {
             transform: scale(1);
   }
 }
-@keyframes zoomLeftIn {
+@keyframes antZoomLeftIn {
   0% {
     opacity: 0;
     -webkit-transform-origin: 0% 50%;
@@ -2825,7 +2876,7 @@ samp {
             transform: scale(1);
   }
 }
-@-webkit-keyframes zoomLeftOut {
+@-webkit-keyframes antZoomLeftOut {
   0% {
     -webkit-transform-origin: 0% 50%;
             transform-origin: 0% 50%;
@@ -2840,7 +2891,7 @@ samp {
             transform: scale(0.8);
   }
 }
-@keyframes zoomLeftOut {
+@keyframes antZoomLeftOut {
   0% {
     -webkit-transform-origin: 0% 50%;
             transform-origin: 0% 50%;
@@ -2855,7 +2906,7 @@ samp {
             transform: scale(0.8);
   }
 }
-@-webkit-keyframes zoomRightIn {
+@-webkit-keyframes antZoomRightIn {
   0% {
     opacity: 0;
     -webkit-transform-origin: 100% 50%;
@@ -2870,7 +2921,7 @@ samp {
             transform: scale(1);
   }
 }
-@keyframes zoomRightIn {
+@keyframes antZoomRightIn {
   0% {
     opacity: 0;
     -webkit-transform-origin: 100% 50%;
@@ -2885,7 +2936,7 @@ samp {
             transform: scale(1);
   }
 }
-@-webkit-keyframes zoomRightOut {
+@-webkit-keyframes antZoomRightOut {
   0% {
     -webkit-transform-origin: 100% 50%;
             transform-origin: 100% 50%;
@@ -2900,7 +2951,7 @@ samp {
             transform: scale(0.8);
   }
 }
-@keyframes zoomRightOut {
+@keyframes antZoomRightOut {
   0% {
     -webkit-transform-origin: 100% 50%;
             transform-origin: 100% 50%;
@@ -2915,7 +2966,7 @@ samp {
             transform: scale(0.8);
   }
 }
-@-webkit-keyframes zoomDownIn {
+@-webkit-keyframes antZoomDownIn {
   0% {
     opacity: 0;
     -webkit-transform-origin: 50% 100%;
@@ -2930,7 +2981,7 @@ samp {
             transform: scale(1);
   }
 }
-@keyframes zoomDownIn {
+@keyframes antZoomDownIn {
   0% {
     opacity: 0;
     -webkit-transform-origin: 50% 100%;
@@ -2945,7 +2996,7 @@ samp {
             transform: scale(1);
   }
 }
-@-webkit-keyframes zoomDownOut {
+@-webkit-keyframes antZoomDownOut {
   0% {
     -webkit-transform-origin: 50% 100%;
             transform-origin: 50% 100%;
@@ -2960,7 +3011,7 @@ samp {
             transform: scale(0.8);
   }
 }
-@keyframes zoomDownOut {
+@keyframes antZoomDownOut {
   0% {
     -webkit-transform-origin: 50% 100%;
             transform-origin: 50% 100%;
@@ -3000,7 +3051,7 @@ samp {
   -moz-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
-  color: #666666;
+  color: #666;
   background-color: #f4f4f4;
   border-color: #d9d9d9;
 }
@@ -3064,7 +3115,7 @@ fieldset[disabled] .ant-btn:active,
 .ant-btn.disabled.active,
 .ant-btn[disabled].active,
 fieldset[disabled] .ant-btn.active {
-  color: #cccccc;
+  color: #ccc;
   background-color: #f3f5f7;
   border-color: #d9d9d9;
 }
@@ -3080,7 +3131,7 @@ fieldset[disabled] .ant-btn.active {
   border-color: #2baee9;
 }
 .ant-btn-primary {
-  color: #ffffff;
+  color: #fff;
   background-color: #2db7f5;
   border-color: #2db7f5;
 }
@@ -3111,14 +3162,14 @@ fieldset[disabled] .ant-btn-primary:active,
 .ant-btn-primary.disabled.active,
 .ant-btn-primary[disabled].active,
 fieldset[disabled] .ant-btn-primary.active {
-  color: #cccccc;
+  color: #ccc;
   background-color: #f3f5f7;
   border-color: #d9d9d9;
 }
 .ant-btn-primary:hover,
 .ant-btn-primary:active,
 .ant-btn-primary.active {
-  color: #ffffff;
+  color: #fff;
 }
 .ant-btn-group .ant-btn-primary:not(:first-child):not(:last-child) {
   border-right-color: #2baee9;
@@ -3134,8 +3185,8 @@ fieldset[disabled] .ant-btn-primary.active {
   border-left-color: #2baee9;
 }
 .ant-btn-ghost {
-  color: #666666;
-  background-color: #ffffff;
+  color: #666;
+  background-color: #fff;
   border-color: #d9d9d9;
 }
 .ant-btn-ghost:hover {
@@ -3165,7 +3216,7 @@ fieldset[disabled] .ant-btn-ghost:active,
 .ant-btn-ghost.disabled.active,
 .ant-btn-ghost[disabled].active,
 fieldset[disabled] .ant-btn-ghost.active {
-  color: #cccccc;
+  color: #ccc;
   background-color: #f3f5f7;
   border-color: #d9d9d9;
 }
@@ -3234,7 +3285,7 @@ fieldset[disabled] .ant-btn-ghost.active {
 .ant-btn-circle-outline:not([disabled]):hover > .anticon,
 .ant-btn-circle-outline:not([disabled]):active > .anticon,
 .ant-btn-circle-outline:not([disabled]).active > .anticon {
-  color: #ffffff;
+  color: #fff;
 }
 .ant-btn-circle-outline:not([disabled]):hover:before,
 .ant-btn-circle-outline:not([disabled]):active:before,
@@ -3249,22 +3300,28 @@ fieldset[disabled] .ant-btn-ghost.active {
 .ant-btn-circle-outline:not([disabled]).active:before {
   background-color: #57c5f7;
 }
+.ant-btn:after {
+  font-family: anticon;
+  content: "\e610";
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease;
+          transition: opacity 0.5s ease;
+}
 .ant-btn-loading {
   padding-right: 31px;
   pointer-events: none;
   opacity: 0.75;
 }
 .ant-btn-loading:after {
-  font-family: anticon;
   -webkit-animation: loadingCircle 1s infinite linear;
   animation: loadingCircle 1s infinite linear;
-  content: "\e610";
-  position: absolute;
   height: 12px;
   line-height: 12px;
-  right: 13px;
+  right: 12px;
   top: 50%;
   margin-top: -6px;
+  opacity: 1;
 }
 .ant-btn-sm.ant-btn-loading {
   padding-right: 24px;
@@ -3372,6 +3429,10 @@ fieldset[disabled] .ant-btn-ghost.active {
   cursor: pointer;
   -webkit-transition: all 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
           transition: all 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .ant-switch-inner {
   color: #fff;
@@ -3465,6 +3526,8 @@ fieldset[disabled] .ant-btn-ghost.active {
   color: #666;
   white-space: nowrap;
   cursor: pointer;
+  -webkit-transition: background 0.3s ease;
+          transition: background 0.3s ease;
 }
 .ant-dropdown-menu > .ant-dropdown-menu-item a {
   color: #666;
@@ -3540,8 +3603,9 @@ fieldset[disabled] .ant-btn-ghost.active {
 .ant-progress-line-bg {
   border-radius: 100px;
   background-color: #2db7f5;
-  -webkit-transition: all 0.6s linear 0s;
-          transition: all 0.6s linear 0s;
+  -webkit-transition: all 0.3s linear 0s;
+          transition: all 0.3s linear 0s;
+  position: relative;
 }
 .ant-progress-line-text {
   position: absolute;
@@ -3569,10 +3633,10 @@ fieldset[disabled] .ant-btn-ghost.active {
           animation: progress-active 2s ease infinite;
 }
 .ant-progress-line-wrap.status-exception .ant-progress-line-bg {
-  background-color: #ff6600;
+  background-color: #f60;
 }
 .ant-progress-line-wrap.status-exception .ant-progress-line-text {
-  color: #ff6600;
+  color: #f60;
 }
 .ant-progress-line-wrap.status-success .ant-progress-line-bg {
   background-color: #87d068;
@@ -3600,7 +3664,7 @@ fieldset[disabled] .ant-btn-ghost.active {
   font-size: 1.16666667em;
 }
 .ant-progress-circle-wrap.status-exception .ant-progress-circle-text {
-  color: #ff6600;
+  color: #f60;
 }
 .ant-progress-circle-wrap.status-success .ant-progress-circle-text {
   color: #87d068;
@@ -3719,6 +3783,7 @@ fieldset[disabled] .ant-btn-ghost.active {
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
   padding-left: 10px;
   padding-right: 20px;
   line-height: 26px;
@@ -3775,11 +3840,11 @@ fieldset[disabled] .ant-btn-ghost.active {
 .ant-select-disabled .ant-select-selection__choice__remove:hover {
   color: #ccc;
 }
-.ant-select .ant-select-search__field__wrap {
+.ant-select-search__field__wrap {
   display: inline-block;
   position: relative;
 }
-.ant-select .ant-select-search__field__placeholder {
+.ant-select-search__field__placeholder {
   position: absolute;
   top: 0;
   left: 3px;
@@ -3787,6 +3852,9 @@ fieldset[disabled] .ant-btn-ghost.active {
 }
 .ant-select-search--inline {
   float: left;
+}
+.ant-select-search--inline .ant-select-search__field__wrap {
+  width: 100%;
 }
 .ant-select-search--inline .ant-select-search__field {
   border: none;
@@ -3940,8 +4008,11 @@ fieldset[disabled] .ant-btn-ghost.active {
   overflow: hidden;
   font-size: 12px;
 }
+.ant-select-dropdown-menu-item {
+  -webkit-transition: background 0.3s ease;
+          transition: background 0.3s ease;
+}
 .ant-select-dropdown--single .ant-select-dropdown-menu-item-selected {
-  background-color: #eaf8fe;
   position: relative;
 }
 .ant-select-dropdown--single .ant-select-dropdown-menu-item-selected:after {
@@ -3970,11 +4041,7 @@ fieldset[disabled] .ant-btn-ghost.active {
 :root .ant-select-dropdown--single .ant-select-dropdown-menu-item-selected:after {
   font-size: 12px;
 }
-.ant-select-dropdown--multiple .ant-select-dropdown-menu-item {
-  padding: 7px 33px 7px 16px;
-}
 .ant-select-dropdown--multiple .ant-select-dropdown-menu-item-selected {
-  background-color: #eaf8fe;
   position: relative;
 }
 .ant-select-dropdown--multiple .ant-select-dropdown-menu-item-selected:after {
@@ -4029,11 +4096,13 @@ fieldset[disabled] .ant-btn-ghost.active {
 .ant-select-dropdown-menu-item {
   position: relative;
   display: block;
-  padding: 7px 16px;
+  padding: 7px 33px 7px 16px;
   font-weight: normal;
   color: #666;
   white-space: nowrap;
   cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .ant-select-dropdown-menu-item:first-child {
   border-top-left-radius: 4px;
@@ -4073,13 +4142,14 @@ fieldset[disabled] .ant-btn-ghost.active {
   padding: 4px;
 }
 .ant-select-dropdown .ant-select-search--dropdown .ant-select-search__field__placeholder {
-  left: 4px;
+  left: 7px;
+  top: 5px;
 }
 .ant-select-dropdown .ant-select-search--dropdown .ant-select-search__field__wrap {
   width: 100%;
 }
 .ant-select-dropdown .ant-select-search--dropdown .ant-select-search__field {
-  padding: 4px;
+  padding: 4px 7px;
   width: 100%;
   box-sizing: border-box;
   border: 1px solid #d9d9d9;
@@ -4099,7 +4169,7 @@ fieldset[disabled] .ant-btn-ghost.active {
   position: absolute;
   left: -9999px;
   top: -9999px;
-  z-index: 1000;
+  z-index: 1070;
 }
 .ant-calendar-picker-container .ant-calendar-hidden {
   display: none;
@@ -4368,7 +4438,7 @@ fieldset[disabled] .ant-btn-ghost.active {
   -moz-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
-  color: #ffffff;
+  color: #fff;
   background-color: #2db7f5;
   border-color: #2db7f5;
   padding: 1px 7px;
@@ -4440,14 +4510,14 @@ fieldset[disabled] .ant-calendar .ant-calendar-ok-btn:active,
 .ant-calendar .ant-calendar-ok-btn.disabled.active,
 .ant-calendar .ant-calendar-ok-btn[disabled].active,
 fieldset[disabled] .ant-calendar .ant-calendar-ok-btn.active {
-  color: #cccccc;
+  color: #ccc;
   background-color: #f3f5f7;
   border-color: #d9d9d9;
 }
 .ant-calendar .ant-calendar-ok-btn:hover,
 .ant-calendar .ant-calendar-ok-btn:active,
 .ant-calendar .ant-calendar-ok-btn.active {
-  color: #ffffff;
+  color: #fff;
 }
 .ant-calendar-time > span {
   margin: 0 2px;
@@ -4465,8 +4535,8 @@ fieldset[disabled] .ant-calendar .ant-calendar-ok-btn.active {
   cursor: text;
   font-size: 12px;
   line-height: 1.5;
-  color: #666666;
-  background-color: #ffffff;
+  color: #666;
+  background-color: #fff;
   background-image: none;
   border: 1px solid #d9d9d9;
   border-radius: 6px;
@@ -4480,14 +4550,14 @@ fieldset[disabled] .ant-calendar .ant-calendar-ok-btn.active {
   text-align: center;
 }
 .ant-calendar-time-input::-moz-placeholder {
-  color: #cccccc;
+  color: #ccc;
   opacity: 1;
 }
 .ant-calendar-time-input:-ms-input-placeholder {
-  color: #cccccc;
+  color: #ccc;
 }
 .ant-calendar-time-input::-webkit-input-placeholder {
-  color: #cccccc;
+  color: #ccc;
 }
 .ant-calendar-time-input:hover {
   border-color: #57c5f7;
@@ -4594,6 +4664,7 @@ textarea.ant-calendar-time-input {
   z-index: 10;
   position: absolute;
   outline: none;
+  border-radius: 6px;
 }
 .ant-calendar-month-panel-hidden {
   display: none;
@@ -4702,6 +4773,7 @@ textarea.ant-calendar-time-input {
   z-index: 10;
   position: absolute;
   outline: none;
+  border-radius: 6px;
 }
 .ant-calendar-year-panel-hidden {
   display: none;
@@ -4828,6 +4900,7 @@ textarea.ant-calendar-time-input {
   z-index: 10;
   position: absolute;
   outline: none;
+  border-radius: 6px;
 }
 .ant-calendar-decade-panel-hidden {
   display: none;
@@ -5046,43 +5119,6 @@ textarea.ant-calendar-time-input {
   z-index: 1000;
   filter: alpha(opacity=50);
 }
-.ant-modal-wrap-hidden > .ant-modal-mask.ant-modal-fade-enter,
-.ant-modal-wrap-hidden > .ant-modal-mask.ant-modal-fade-leave {
-  display: block;
-}
-.ant-modal-fade-enter {
-  opacity: 0;
-  -webkit-animation-duration: 0.3s;
-          animation-duration: 0.3s;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-  -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-          animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  -webkit-animation-play-state: paused;
-          animation-play-state: paused;
-}
-.ant-modal-fade-leave {
-  -webkit-animation-duration: 0.3s;
-          animation-duration: 0.3s;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-  -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-          animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  -webkit-animation-play-state: paused;
-          animation-play-state: paused;
-}
-.ant-modal-fade-enter.ant-modal-fade-enter-active {
-  -webkit-animation-name: fadeIn;
-          animation-name: fadeIn;
-  -webkit-animation-play-state: running;
-          animation-play-state: running;
-}
-.ant-modal-fade-leave.ant-modal-fade-leave-active {
-  -webkit-animation-name: fadeOut;
-          animation-name: fadeOut;
-  -webkit-animation-play-state: running;
-          animation-play-state: running;
-}
 .ant-modal-header {
   padding: 13px 18px 14px 16px;
 }
@@ -5103,14 +5139,14 @@ textarea.ant-calendar-time-input {
   padding: 30px 40px;
 }
 .ant-confirm .ant-confirm-body .ant-confirm-title {
-  color: #666666;
+  color: #666;
   font-weight: bold;
   font-size: 14px;
 }
 .ant-confirm .ant-confirm-body .ant-confirm-content {
   margin-left: 37px;
   font-size: 12px;
-  color: #666666;
+  color: #666;
 }
 .ant-confirm .ant-confirm-body .anticon {
   font-size: 24px;
@@ -5119,7 +5155,7 @@ textarea.ant-calendar-time-input {
   top: 2px;
 }
 .ant-confirm .ant-confirm-body .anticon-exclamation-circle {
-  color: #ff6600;
+  color: #f60;
 }
 .ant-confirm .ant-confirm-body .anticon-question-circle {
   color: #fac450;
@@ -5420,7 +5456,9 @@ textarea.ant-calendar-time-input {
 }
 .ant-table {
   font-size: 12px;
-  color: #666666;
+  color: #666;
+}
+.ant-table-body {
   -webkit-transition: opacity 0.3s ease;
           transition: opacity 0.3s ease;
 }
@@ -5610,15 +5648,25 @@ textarea.ant-calendar-time-input {
   border-right: 0;
 }
 .ant-table-empty {
+  position: relative;
+  margin-bottom: 16px;
+}
+.ant-table-empty .ant-table-body {
+  height: 150px;
+}
+.ant-table-placeholder {
   height: 100px;
   line-height: 100px;
   text-align: center;
   font-size: 12px;
   color: #999;
   border-bottom: 1px solid #E9E9E9;
-  margin-bottom: 16px;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
 }
-.ant-table-empty .anticon {
+.ant-table-placeholder .anticon {
   margin-right: 4px;
   position: relative;
   top: -1px;
@@ -5689,12 +5737,13 @@ a.ant-table-filter-dropdown-link.clear {
   width: 18px;
   height: 18px;
   text-align: center;
-  line-height: 16px;
+  line-height: 15px;
   border: 1px solid #E9E9E9;
   -webkit-user-select: none;
-  -moz-user-select: none;
-   -ms-user-select: none;
-       user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background: #fff;
 }
 .ant-table-row-expand-icon-cell {
   width: 18px;
@@ -5738,7 +5787,7 @@ tr.ant-table-expanded-row:hover {
 .ant-tooltip-inner {
   max-width: 250px;
   padding: 8px 10px;
-  color: #ffffff;
+  color: #fff;
   text-align: left;
   text-decoration: none;
   background-color: #373737;
@@ -5847,7 +5896,7 @@ tr.ant-table-expanded-row:hover {
 .ant-popover-inner {
   max-width: 276px;
   min-width: 177px;
-  background-color: #ffffff;
+  background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #d9d9d9;
   border-radius: 6px;
@@ -5863,7 +5912,7 @@ tr.ant-table-expanded-row:hover {
 }
 .ant-popover-content {
   padding: 8px 16px;
-  color: #666666;
+  color: #666;
 }
 .ant-popover-message {
   padding: 8px 0 16px;
@@ -5872,7 +5921,7 @@ tr.ant-table-expanded-row:hover {
 }
 .ant-popover-message .anticon {
   margin-right: 8px;
-  color: #ff6600;
+  color: #f60;
   position: relative;
   top: -1px;
 }
@@ -5911,7 +5960,7 @@ tr.ant-table-expanded-row:hover {
   bottom: 1px;
   margin-left: -4px;
   border-bottom-width: 0;
-  border-top-color: #ffffff;
+  border-top-color: #fff;
 }
 .ant-popover-placement-right > .ant-popover-arrow {
   top: 50%;
@@ -5925,7 +5974,7 @@ tr.ant-table-expanded-row:hover {
   left: 1px;
   bottom: -4px;
   border-left-width: 0;
-  border-right-color: #ffffff;
+  border-right-color: #fff;
 }
 .ant-popover-placement-bottom > .ant-popover-arrow {
   left: 50%;
@@ -5939,7 +5988,7 @@ tr.ant-table-expanded-row:hover {
   top: 1px;
   margin-left: -4px;
   border-top-width: 0;
-  border-bottom-color: #ffffff;
+  border-bottom-color: #fff;
 }
 .ant-popover-placement-left > .ant-popover-arrow {
   top: 50%;
@@ -5952,7 +6001,7 @@ tr.ant-table-expanded-row:hover {
   content: " ";
   right: 1px;
   border-right-width: 0;
-  border-left-color: #ffffff;
+  border-left-color: #fff;
   bottom: -4px;
 }
 .ant-pagination {
@@ -6181,8 +6230,8 @@ tr.ant-table-expanded-row:hover {
   cursor: text;
   font-size: 12px;
   line-height: 1.5;
-  color: #666666;
-  background-color: #ffffff;
+  color: #666;
+  background-color: #fff;
   background-image: none;
   border: 1px solid #d9d9d9;
   border-radius: 6px;
@@ -6193,14 +6242,14 @@ tr.ant-table-expanded-row:hover {
   width: 50px;
 }
 .ant-pagination-options-quick-jumper input::-moz-placeholder {
-  color: #cccccc;
+  color: #ccc;
   opacity: 1;
 }
 .ant-pagination-options-quick-jumper input:-ms-input-placeholder {
-  color: #cccccc;
+  color: #ccc;
 }
 .ant-pagination-options-quick-jumper input::-webkit-input-placeholder {
-  color: #cccccc;
+  color: #ccc;
 }
 .ant-pagination-options-quick-jumper input:hover {
   border-color: #57c5f7;
@@ -6306,7 +6355,7 @@ legend {
   margin-bottom: 20px;
   font-size: 14px;
   line-height: inherit;
-  color: #999999;
+  color: #999;
   border: 0;
   border-bottom: 1px solid #d9d9d9;
 }
@@ -6343,7 +6392,7 @@ output {
   padding-top: 15px;
   font-size: 12px;
   line-height: 1.5;
-  color: #666666;
+  color: #666;
 }
 label {
   position: relative;
@@ -6354,7 +6403,7 @@ label[required]:before {
   content: "*";
   font-family: SimSun;
   font-size: 12px;
-  color: #ff6600;
+  color: #f60;
 }
 label > .anticon {
   vertical-align: top;
@@ -6369,8 +6418,8 @@ label > .anticon {
   cursor: text;
   font-size: 12px;
   line-height: 1.5;
-  color: #666666;
-  background-color: #ffffff;
+  color: #666;
+  background-color: #fff;
   background-image: none;
   border: 1px solid #d9d9d9;
   border-radius: 6px;
@@ -6379,14 +6428,14 @@ label > .anticon {
   -moz-transition: border .3s cubic-bezier(0.645, 0.045, 0.355, 1), background .3s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow .3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .ant-input::-moz-placeholder {
-  color: #cccccc;
+  color: #ccc;
   opacity: 1;
 }
 .ant-input:-ms-input-placeholder {
-  color: #cccccc;
+  color: #ccc;
 }
 .ant-input::-webkit-input-placeholder {
-  color: #cccccc;
+  color: #ccc;
 }
 .ant-input:hover {
   border-color: #57c5f7;
@@ -6475,7 +6524,7 @@ textarea.ant-input {
   font-size: 12px;
   font-weight: normal;
   line-height: 1;
-  color: #666666;
+  color: #666;
   text-align: center;
   background-color: #eee;
   border: 1px solid #d9d9d9;
@@ -6532,11 +6581,12 @@ fieldset[disabled] .ant-checkbox label {
   cursor: not-allowed;
 }
 .ant-form-item {
+  font-size: 12px;
   margin-bottom: 24px;
   color: #666;
 }
 .ant-form-item > label {
-  color: #666666;
+  color: #666;
   text-align: right;
   vertical-align: middle;
 }
@@ -6565,10 +6615,6 @@ fieldset[disabled] .ant-checkbox label {
   font-size: 12px;
   line-height: 1.5;
   bottom: -18px;
-}
-form * {
-  font-size: 12px;
-  line-height: 1.5;
 }
 form .has-feedback .anticon {
   width: 32px;
@@ -6721,7 +6767,7 @@ form .ant-calendar-picker {
 .has-success .ant-input-group-addon {
   color: #87d068;
   border-color: #2db7f5;
-  background-color: #ffffff;
+  background-color: #fff;
 }
 .has-success .has-feedback {
   color: #87d068;
@@ -6751,7 +6797,7 @@ form .ant-calendar-picker {
 .has-warning .ant-input-group-addon {
   color: #fac450;
   border-color: #fac450;
-  background-color: #ffffff;
+  background-color: #fff;
 }
 .has-warning .has-feedback {
   color: #fac450;
@@ -6772,39 +6818,39 @@ form .ant-calendar-picker {
 }
 .has-error .ant-form-explain,
 .has-error .ant-form-split {
-  color: #ff6600;
+  color: #f60;
 }
 .has-error .ant-input {
-  border-color: #ff6600;
+  border-color: #f60;
   box-shadow: 0 0 0 2px #ffe0cc;
 }
 .has-error .ant-input:not([disabled]):hover {
-  border-color: #ff6600;
+  border-color: #f60;
 }
 .has-error .ant-calendar-picker-open .ant-calendar-picker-input {
   box-shadow: 0 0 0 2px #ffe0cc;
 }
 .has-error .ant-input-group-addon {
-  color: #ff6600;
-  border-color: #ff6600;
-  background-color: #ffffff;
+  color: #f60;
+  border-color: #f60;
+  background-color: #fff;
 }
 .has-error .has-feedback {
-  color: #ff6600;
+  color: #f60;
 }
 .has-error.has-feedback:after {
   content: '\e628';
-  color: #ff6600;
+  color: #f60;
 }
 .has-error .ant-select-selection {
-  border-color: #ff6600;
+  border-color: #f60;
   box-shadow: 0 0 0 2px #ffe0cc;
 }
 .has-error .ant-select-arrow {
-  color: #ff6600;
+  color: #f60;
 }
 .has-error .ant-calendar-picker-icon:after {
-  color: #ff6600;
+  color: #f60;
 }
 .is-validating.has-feedback:after {
   display: inline-block;
@@ -6863,17 +6909,17 @@ form .ant-calendar-picker {
   vertical-align: top;
 }
 .ant-steps .ant-steps-item.ant-steps-status-wait .ant-steps-head-inner {
-  border-color: #cccccc;
+  border-color: #ccc;
   background-color: #fff;
 }
 .ant-steps .ant-steps-item.ant-steps-status-wait .ant-steps-head-inner > .ant-steps-icon {
-  color: #cccccc;
+  color: #ccc;
 }
 .ant-steps .ant-steps-item.ant-steps-status-wait .ant-steps-title {
-  color: #999999;
+  color: #999;
 }
 .ant-steps .ant-steps-item.ant-steps-status-wait .ant-steps-description {
-  color: #999999;
+  color: #999;
 }
 .ant-steps .ant-steps-item.ant-steps-status-wait .ant-steps-tail > i {
   background-color: #e9e9e9;
@@ -6886,10 +6932,10 @@ form .ant-calendar-picker {
   color: #fff;
 }
 .ant-steps .ant-steps-item.ant-steps-status-process .ant-steps-title {
-  color: #666666;
+  color: #666;
 }
 .ant-steps .ant-steps-item.ant-steps-status-process .ant-steps-description {
-  color: #666666;
+  color: #666;
 }
 .ant-steps .ant-steps-item.ant-steps-status-process .ant-steps-tail > i {
   background-color: #e9e9e9;
@@ -6905,10 +6951,10 @@ form .ant-calendar-picker {
   background-color: #2db7f5;
 }
 .ant-steps .ant-steps-item.ant-steps-status-finish .ant-steps-title {
-  color: #999999;
+  color: #999;
 }
 .ant-steps .ant-steps-item.ant-steps-status-finish .ant-steps-description {
-  color: #999999;
+  color: #999;
 }
 .ant-steps .ant-steps-item.ant-steps-custom .ant-steps-head-inner {
   background: none;
@@ -6936,7 +6982,7 @@ form .ant-calendar-picker {
 }
 .ant-steps .ant-steps-head-inner {
   display: block;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   width: 26px;
   height: 26px;
   line-height: 26px;
@@ -6999,7 +7045,7 @@ form .ant-calendar-picker {
   -moz-transition: background 0.3s ease;
 }
 .ant-steps.ant-steps-small .ant-steps-head-inner {
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   width: 18px;
   height: 18px;
   line-height: 18px;
@@ -7133,8 +7179,8 @@ form .ant-calendar-picker {
   width: 100%;
   cursor: text;
   line-height: 1.5;
-  color: #666666;
-  background-color: #ffffff;
+  color: #666;
+  background-color: #fff;
   background-image: none;
   border: 1px solid #d9d9d9;
   transition: border .3s cubic-bezier(0.645, 0.045, 0.355, 1), background .3s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow .3s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -7152,14 +7198,14 @@ form .ant-calendar-picker {
   overflow: hidden;
 }
 .ant-input-number::-moz-placeholder {
-  color: #cccccc;
+  color: #ccc;
   opacity: 1;
 }
 .ant-input-number:-ms-input-placeholder {
-  color: #cccccc;
+  color: #ccc;
 }
 .ant-input-number::-webkit-input-placeholder {
-  color: #cccccc;
+  color: #ccc;
 }
 .ant-input-number:hover {
   border-color: #57c5f7;
@@ -7198,6 +7244,12 @@ textarea.ant-input-number {
   height: 14px;
   overflow: hidden;
   color: #999;
+  position: relative;
+  -webkit-transition: all 0.1s linear;
+          transition: all 0.1s linear;
+}
+.ant-input-number-handler:hover {
+  background: #fefefe;
 }
 .ant-input-number-handler:hover .ant-input-number-handler-up-inner,
 .ant-input-number-handler:hover .ant-input-number-handler-down-inner {
@@ -7212,19 +7264,21 @@ textarea.ant-input-number {
   text-transform: none;
   text-rendering: auto;
   line-height: 12px;
-  -moz-user-select: none;
-   -ms-user-select: none;
-       user-select: none;
   -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   position: absolute;
   width: 12px;
   height: 12px;
+  -webkit-transition: all 0.1s linear;
+          transition: all 0.1s linear;
   display: inline-block;
-  font-size: 0.66666667;
-  font-size: 8px \9;
-  -webkit-transform: scale(0.66666667) rotate(0deg);
-      -ms-transform: scale(0.66666667) rotate(0deg);
-          transform: scale(0.66666667) rotate(0deg);
+  font-size: 0.58333333;
+  font-size: 7px \9;
+  -webkit-transform: scale(0.58333333) rotate(0deg);
+      -ms-transform: scale(0.58333333) rotate(0deg);
+          transform: scale(0.58333333) rotate(0deg);
   /* IE6-IE8 */
   filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=1, M12=0, M21=0, M22=1);
   zoom: 1;
@@ -7272,8 +7326,8 @@ textarea.ant-input-number {
   -moz-appearance: textfield;
   line-height: 28px;
   height: 28px;
-  -webkit-transition: all 0.3s ease;
-          transition: all 0.3s ease;
+  -webkit-transition: all 0.3s linear;
+          transition: all 0.3s linear;
   color: #666;
   border: 0;
   border-radius: 6px;
@@ -7308,7 +7362,10 @@ textarea.ant-input-number {
   top: 2px;
 }
 .ant-input-number-lg .ant-input-number-handler-down-inner {
-  top: 18px;
+  bottom: 2px;
+}
+.ant-input-number-lg .ant-input-number-handler-up:hover {
+  height: 18px;
 }
 .ant-input-number-sm {
   padding: 0;
@@ -7334,7 +7391,13 @@ textarea.ant-input-number {
   top: -1px;
 }
 .ant-input-number-sm .ant-input-number-handler-down-inner {
-  top: 10px;
+  bottom: -1px;
+}
+.ant-input-number-sm .ant-input-number-handler-up:hover {
+  height: 13px;
+}
+.ant-input-number-sm .ant-input-number-handler-down:hover .ant-input-number-handler-down-inner {
+  bottom: 4px;
 }
 .ant-input-number-handler-wrap {
   float: right;
@@ -7342,9 +7405,12 @@ textarea.ant-input-number {
   width: 22px;
   height: 28px;
   position: relative;
+  opacity: 0;
+}
+.ant-input-number:hover .ant-input-number-handler-wrap {
+  opacity: 1;
 }
 .ant-input-number-handler-up {
-  border-bottom: 1px solid #D9D9D9;
   cursor: pointer;
 }
 .ant-input-number-handler-up-inner {
@@ -7360,12 +7426,24 @@ textarea.ant-input-number {
   -webkit-transform-origin: 47.5% 51%;
   /* fix chrome position */
 }
+.ant-input-number-handler-up:hover {
+  height: 16px;
+}
+.ant-input-number-handler-up:hover .ant-input-number-handler-up-inner {
+  margin-top: 2px;
+}
 .ant-input-number-handler-down {
+  border-top: 1px solid #D9D9D9;
+  top: -1px;
   cursor: pointer;
 }
 .ant-input-number-handler-down-inner:before {
   text-align: center;
   content: "\e600";
+}
+.ant-input-number-handler-down:hover {
+  height: 16px;
+  margin-top: -2px;
 }
 .ant-input-number-handler-down-disabled .ant-input-number-handler-down-inner,
 .ant-input-number-handler-up-disabled .ant-input-number-handler-down-inner,
@@ -7390,6 +7468,9 @@ textarea.ant-input-number {
   opacity: 0.72;
   cursor: not-allowed;
   background-color: #f3f3f3;
+}
+.ant-input-number-disabled .ant-input-number-handler-wrap {
+  display: none;
 }
 .ant-input-number-disabled .ant-input-number-handler {
   opacity: 0.72;
@@ -7590,7 +7671,7 @@ textarea.ant-input-number {
 .ant-collapse-content {
   display: none;
   overflow: hidden;
-  color: #666666;
+  color: #666;
   padding: 0 16px;
   background-color: #fff;
 }
@@ -7633,7 +7714,7 @@ textarea.ant-input-number {
 .ant-message {
   font-size: 12px;
   position: fixed;
-  z-index: 1000;
+  z-index: 1050;
   width: 100%;
   top: 16px;
 }
@@ -7657,7 +7738,7 @@ textarea.ant-input-number {
   color: #87d068;
 }
 .ant-message-error {
-  color: #ff6600;
+  color: #f60;
 }
 .ant-message-info,
 .ant-message-loading {
@@ -7677,15 +7758,13 @@ textarea.ant-input-number {
 }
 .ant-slider {
   position: relative;
-  margin: 12px 0;
-  margin-left: 7px;
-  height: 8px;
-  width: auto;
-  border-radius: 6px;
+  margin: 10px 0px 10px 7px;
+  height: 12px;
+  border-radius: 5px;
   background-color: #e9e9e9;
   cursor: pointer;
-  border-top: 2px solid #fff;
-  border-bottom: 2px solid #fff;
+  border-top: 4px solid #fff;
+  border-bottom: 4px solid #fff;
   -webkit-transition: background-color 0.3s ease;
           transition: background-color 0.3s ease;
 }
@@ -7701,6 +7780,9 @@ textarea.ant-input-number {
 }
 .ant-slider:hover {
   background-color: #e1e1e1;
+}
+.ant-slider:hover .ant-slider-handle {
+  border-color: #57c5f7;
 }
 .ant-slider:hover .ant-slider-track {
   background-color: #81d4f9;
@@ -7777,10 +7859,10 @@ textarea.ant-input-number {
   background-color: #e9e9e9 !important;
 }
 .ant-slider-disabled .ant-slider-track {
-  background-color: #cccccc !important;
+  background-color: #ccc !important;
 }
 .ant-slider-disabled .ant-slider-handle {
-  border-color: #cccccc;
+  border-color: #ccc;
   background-color: #fff;
   cursor: not-allowed;
 }
@@ -7802,13 +7884,12 @@ textarea.ant-input-number {
   padding: 4px 0 8px 0;
 }
 .ant-slider-tooltip-inner {
-  padding: 6px 2px;
-  width: 100%;
+  padding: 6px;
   min-width: 24px;
   height: 24px;
   font-size: 12px;
   line-height: 1;
-  color: #ffffff;
+  color: #fff;
   text-align: center;
   text-decoration: none;
   background-color: #6c6c6c;
@@ -7968,7 +8049,10 @@ label.ant-radio-button:hover:before {
 }
 label.ant-radio-button .ant-radio-inner,
 label.ant-radio-button input {
-  display: none;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  width: 0;
+  height: 0;
 }
 label.ant-radio-button-checked {
   background: #2db7f5;
@@ -8002,7 +8086,7 @@ label.ant-radio-button-checked:active {
   padding: 16px;
   border-radius: 6px;
   box-shadow: 0 0 4px #d9d9d9;
-  background: #ffffff;
+  background: #fff;
   line-height: 1.5;
   position: relative;
   margin-bottom: 10px;
@@ -8010,26 +8094,26 @@ label.ant-radio-button-checked:active {
 }
 .ant-notification-notice-content-message {
   font-size: 14px;
-  color: #666666;
+  color: #666;
   margin-bottom: 4px;
 }
 .ant-notification-notice-content-description {
   font-size: 12px;
-  color: #999999;
+  color: #999;
 }
 .ant-notification-notice-content-icon {
   position: relative;
 }
 .ant-notification-notice-content-icon-message {
   font-size: 14px;
-  color: #666666;
+  color: #666;
   margin-left: 51px;
   margin-bottom: 4px;
 }
 .ant-notification-notice-content-icon-description {
   margin-left: 51px;
   font-size: 12px;
-  color: #999999;
+  color: #999;
 }
 .ant-notification-notice-content-icon-icon {
   position: absolute;
@@ -8048,7 +8132,7 @@ label.ant-radio-button-checked:active {
   color: #fac450;
 }
 .ant-notification-notice-content-icon-icon-error {
-  color: #ff6600;
+  color: #f60;
 }
 .ant-notification-notice-close-x:after {
   font-size: 12px;
@@ -8179,7 +8263,7 @@ label.ant-radio-button-checked:active {
 .ant-tag,
 .ant-tag a,
 .ant-tag a:hover {
-  color: #666666;
+  color: #666;
 }
 .ant-tag .anticon-cross {
   display: inline-block;
@@ -8243,22 +8327,18 @@ label.ant-radio-button-checked:active {
   background: #fac450;
 }
 .ant-tag-red {
-  background: #ff6600;
+  background: #f60;
 }
 .ant-tag-close {
   width: 0 !important;
   padding: 0;
   margin-right: 0;
 }
-.zoom-tag-leave {
-  -webkit-animation: zoomOut 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
-          animation: zoomOut 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
-}
 .ant-alert {
   position: relative;
   padding: 8px 8px 8px 16px;
   border-radius: 6px;
-  color: #666666;
+  color: #666;
   font-size: 12px;
   line-height: 16px;
   margin-bottom: 10px;
@@ -8297,7 +8377,7 @@ label.ant-radio-button-checked:active {
   background-color: #fff0e6;
 }
 .ant-alert-error .anticon {
-  color: #ff6600;
+  color: #f60;
 }
 .ant-alert-close-icon,
 .ant-alert-with-description-close-icon {
@@ -8338,7 +8418,7 @@ label.ant-radio-button-checked:active {
   position: relative;
   border-radius: 6px;
   margin-bottom: 10px;
-  color: #666666;
+  color: #666;
 }
 .ant-alert-with-description-icon {
   position: absolute;
@@ -8356,11 +8436,11 @@ label.ant-radio-button-checked:active {
 }
 .ant-alert-with-description-message {
   font-size: 14px;
-  color: #666666;
+  color: #666;
 }
 .ant-alert-with-description-description {
   font-size: 12px;
-  color: #999999;
+  color: #999;
 }
 .ant-alert-with-description-success {
   border: 1px solid #e7f6e1;
@@ -8388,7 +8468,7 @@ label.ant-radio-button-checked:active {
   background-color: #fff0e6;
 }
 .ant-alert-with-description-error .anticon {
-  color: #ff6600;
+  color: #f60;
 }
 .ant-alert-close {
   height: 0 !important;
@@ -9029,10 +9109,11 @@ label.ant-radio-button-checked:active {
   padding-left: 0;
   list-style: none;
   z-index: 1001;
-  border: 1px solid #d9d9d9;
+  /*border: 1px solid #d9d9d9;*/
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.17);
   border-radius: 6px;
-  color: #666666;
+  color: #666;
+  background: #fff;
 }
 .ant-menu-item-group-list {
   margin: 0;
@@ -9194,7 +9275,7 @@ label.ant-radio-button-checked:active {
 .ant-menu-horizontal > .ant-menu-item > a,
 .ant-menu-horizontal > .ant-menu-submenu > .ant-menu-submenu-title > a {
   display: block;
-  color: #666666;
+  color: #666;
 }
 .ant-menu-horizontal > .ant-menu-item > a:hover,
 .ant-menu-horizontal > .ant-menu-submenu > .ant-menu-submenu-title > a:hover {
@@ -9312,6 +9393,7 @@ label.ant-radio-button-checked:active {
 .ant-badge {
   position: relative;
   display: inline-block;
+  line-height: 1;
 }
 .ant-badge-count {
   position: absolute;
@@ -9322,7 +9404,7 @@ label.ant-radio-button-checked:active {
   height: 20px;
   border-radius: 10px;
   min-width: 20px;
-  background: #ff6600;
+  background: #f60;
   color: #fff;
   line-height: 20px;
   text-align: center;
@@ -9346,7 +9428,7 @@ label.ant-radio-button-checked:active {
   height: 8px;
   width: 8px;
   border-radius: 100%;
-  background: #ff6600;
+  background: #f60;
   -webkit-transition: all 0.3s ease;
           transition: all 0.3s ease;
   z-index: 10;
@@ -9380,7 +9462,7 @@ a .ant-badge-count:active {
   border: 2px solid #2db7f5;
 }
 .ant-timeline-item-head-red {
-  border: 2px solid #ff6600;
+  border: 2px solid #f60;
 }
 .ant-timeline-item-head-green {
   border: 2px solid #87d068;

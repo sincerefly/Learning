@@ -29,15 +29,16 @@ a.logo {
 }
 
 .main-wrapper {
-  background-color: #000;
+  background-color: #fff;
 }
 
 .aside-container {
   width: 260px;
-  background-color: #F9F9F9;
-  padding-top: 10px;
+  /*background-color: #F9F9F9;*/
+  padding-top: 30px;
   padding-bottom: 50px;
   float: left;
+  border-right: 1px solid #eee;
 }
 
 .aside-container li a {
@@ -47,7 +48,7 @@ a.logo {
 }
 
 .aside-container > ul > li > a {
-  padding-left: 46px;
+  padding-left: 90px;
   font-size: 14px;
 }
 
@@ -59,6 +60,12 @@ a {
   color: 
 }
 
+.main-container {
+  margin-left: 260px;
+  padding: 30px 40px 120px;
+  background-color: #fff;
+  min-height: 500px;
+}
 
 
 
