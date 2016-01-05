@@ -1,0 +1,18 @@
+.container {
+  width: 60%;
+  margin: 10px auto;
+  column-width: 240px;
+  -webkit-column-width: 240px;
+  column-gap: 10px;
+  -webkit-column-gap: 10px;
+}
+
+.container div {
+  text-align: center;
+  border: 1px solid #ccc;
+  margin: 10px 0;
+}
+.container div img {
+  padding: 5px 0;
+  width: 240px;
+}

@@ -1,4 +1,5 @@
 var fibonacci = function (n) {
+
   if (n === 0) {
     return 0;
   }
@@ -6,13 +7,13 @@ var fibonacci = function (n) {
     return 1;
   }
   if (n < 0) {
-    throw new Error("n should >= 0")
+    throw new Error("n should >= 0");
   }
   if (n > 10) {
-    throw new Error("n should <= 10")
+    throw new Error("n should <= 10");
   }
-  if (typeof(n) !== 'number') {
-    throw new Error("n should be a number")
+  if (typeof n !== 'number') {
+    throw new Error("n should be a number");
   }
   return fibonacci(n-1) + fibonacci(n-2);
 }
@@ -23,3 +24,7 @@ if (require.main === module) {
 }
 
 exports.fibonacci = fibonacci;
+
+
+
+
