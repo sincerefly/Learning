@@ -1,0 +1,78 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6em;
+}
+
+.wrapper {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding-top: 7.5rem;
+  padding-bottom: 7.5rem;
+  margin-bottom: 0;
+  max-width: 80.0rem;
+}
+
+.navigation {
+  background: #f4f5f6;
+  border-bottom: .1rem solid #d1d1d1;
+  display: block;
+  height: 5.2rem;
+  width: 100%;
+}
+
+.navigation .container {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding-top: 0;
+  padding-bottom: 0;
+  position: relative;
+  width: 100%;
+}
+
+.navigation .title, .navigation-title {
+  color: #606c76;
+  font-family: 'Gotham Rounded A', 'Gotham Rounded B', 'Helvetica Neue', Arial, sans-serif;
+  display: inline;
+  line-height: 5.2rem;
+  font-size: 1.6rem;
+  letter-spacing: -0.1rem;
+  padding: 0;
+}
+
+.navigation img {
+  position: relative;
+  top: .4rem;
+  height: 2.0rem;
+}
+
+.navigation-list {
+  list-style: none;
+  /* line-height: 5.2rem; */
+  /* margin-top: 1.4rem; */
+  margin-bottom: 0;
+}
+
+.navigation-item {
+  position: relative;
+  float: left;
+  margin-left: 2.5rem;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+.navigation-link {
+  line-height: 5.2rem;
+  font-size: 1.6rem;
+  /* float: left; */
+}
+
+
+
+
