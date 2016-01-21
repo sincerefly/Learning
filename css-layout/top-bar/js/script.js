@@ -8,7 +8,7 @@
 
 	function init() {
 		for (i = 0; i < $popoverLinks.length; i++) $popoverLinks[i].addEventListener('click', openPopover);
-		// document.addEventListener('click', closePopover);
+    document.addEventListener('click', closePopover);
 	}
 
 	function closePopover(e) {
