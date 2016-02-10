@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css" media="all">
+    .pos {
+      text-align: center;
+    }
+    .canvas {
+      border: 1px solid #ccc;
+    }
+  </style>
+
+  <title>html5 canvas</title>
+</head>
+<body>
+  <div class="pos">
+    <img id="img" src="index.jpg" alt="index" width="50" height="50">
+    <canvas id="a1" class="canvas" width="300" height="200"></canvas>
+  </div>
+
+
+
+</body>
+  <script type="text/javascript" charset="utf-8">
+    var a_canvas = document.getElementById("a1");
+    var context = a_canvas.getContext("2d");
+    var img = document.getElementById("img");
+
+    setInterval(function () {
+      a_canvas.width = a_canvas.width;
+      var x = Math.floor((Math.random() * 240));
+      var y = Math.floor((Math.random() * 140));
+      context.drawImage(img, x, y, 60, 60);
+    }, 1000);
+
+  </script>
+</html>
+
+
+
+
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css" media="all">
+    .pos {
+      text-align: center;
+    }
+    .canvas {
+      border: 1px solid #ccc;
+    }
+  </style>
+
+  <title>html5 canvas</title>
+</head>
+<body>
+  <div class="pos">
+    <canvas id="a1" class="canvas" width="300" height="200"></canvas>
+  </div>
+
+</body>
+  <script type="text/javascript" charset="utf-8">
+    var a_canvas = document.getElementById("a1");
+    console.log(a_canvas);
+    var a_context = a_canvas.getContext("2d");
+    a_context.fillRect(10, 20, 30, 40);
+    a_context.clearRect(10, 20, 10, 10);
+    setTimeout(function () {
+      a_canvas.width = a_canvas.width;
+    }, 3000);
+  </script>
+</html>
+
+
+
+
+
